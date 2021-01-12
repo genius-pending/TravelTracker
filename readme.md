@@ -2,7 +2,7 @@
 
 
 ## Group 1:
-George Roberts. robertsicher
+George Robertshaw. robertsicher
 Shivey Singh. genius-pending
 Pawel Nawoj. PavN93 
 Rekha Kumari. Nikstar-1
@@ -68,7 +68,7 @@ Enjoy Tracking your Trip!
 
 ## Tasks 
 
-George Roberts. robertsicher ....
+George Robertshaw. robertsicher ....
 
 Shivey Singh. genius-pending ... 
 
