@@ -9,5 +9,6 @@ CREATE TABLE holidays (
   hotel VARCHAR(255) NOT NULL,
   restaurant VARCHAR(255) NOT NULL,
   review VARCHAR(255) NOT NULL,
+  picture VARBINARY(255)NOT NULL,
   PRIMARY KEY(id)
 );
