@@ -7,24 +7,24 @@ let router = express.Router();
 
 //select all holidays from the db and render them
 router.get('/', function(req, res) {
-    holidayORM.selectAll(function(data) {
-    res.render('index', {holiday:data});
+holidayORM.selectAll(function(data) {
+res.render('index', {holiday:data});
  });
 });
 
 //post a new holiday to the db
 router.post('/', function(req, res) {
-    holidayORM.insertOne(req.body.holiday, function(result) {
-    console.log(result);
-    res.redirect('/');
-  });
+holidayORM.insertOne(req.body.holiday, function(result) {
+console.log(result);
+res.redirect('/');
+ });
 });
 
 //update a holiday's status
 router.put('/:id', function(req,res) {
-    holidayORM.updateOne(req.params.id, function(result) {
-    console.log(result);
-    res.redirect('/');
+holidayORM.updateOne(req.params.id, function(result) {
+console.log(result);
+res.redirect('/');
   });
 });
 
