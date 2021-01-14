@@ -9,11 +9,6 @@ CREATE TABLE holidays (
   hotel VARCHAR(255) NOT NULL,
   restaurant VARCHAR(255) NOT NULL,
   review VARCHAR(255) NOT NULL,
-<<<<<<< Updated upstream
-  picture VARBINARY(255)NOT NULL,
-=======
-  picture VARCHAR(255) NOT NULL,
-
->>>>>>> Stashed changes
+  picture VARCHAR(255)NOT NULL,
   PRIMARY KEY(id)
 );
