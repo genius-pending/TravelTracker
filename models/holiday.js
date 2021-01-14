@@ -1,4 +1,4 @@
-let orm = require('../config/orm.js');
+let orm = require('./orm.js');
 
 // An object that is going to be exported by holiday-controller,js
 //calling the functions from the orm.js file
@@ -8,8 +8,8 @@ let holidayORM = {
       response(data);
     });
   },
-  insertOne: function (cityname, hotel, restaurant, review, response) {
-    orm.insertOne(cityname, hotel, restaurant, review, function (data) {
+  insertOne: function (cityname, hotel, restaurant, review, picture, response) {
+    orm.insertOne(cityname, hotel, restaurant, review, picture, function (data) {
       response(data);
     });
   },
