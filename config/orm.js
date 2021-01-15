@@ -15,7 +15,7 @@ let orm = {
   },
   //insert into the holidays table fields
   insertOne: function (holiday, response) {
-    let queryString = 'INSERT INTO holidays(cityname,hotel,restaurant,review) VALUES (?,?,?,?)';
+    let queryString = 'INSERT INTO holidays(cityname,hotel,restaurant,review, picture) VALUES (?,?,?,?)';
     connection.query(queryString, [holiday], function (err, data) {
       if (err) {
         throw err;
