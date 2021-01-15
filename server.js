@@ -35,10 +35,10 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static(__dirname + '/public'));
 
 //require holiday-controller,js for the routes
-let routes = require("./controllers/holiday_controller.js");
+let routes = require('./controllers/holiday_controller.js');
 
-app.use("/", routes);
-app.use("/:id", routes);
+app.use('/', routes);
+app.use('/:id', routes);
 
 app.listen(PORT, function() {
   console.log('Hello and welcome to project 2 express server');
