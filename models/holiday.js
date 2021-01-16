@@ -26,5 +26,4 @@ const Holiday = db.define('holiday', {
     type: Sequelize.STRING
   }
 });
-
 module.exports = Holiday;
