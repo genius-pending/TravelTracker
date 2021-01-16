@@ -1,4 +1,4 @@
-let orm = require('./orm.js');
+let orm = require('../config/orm.js');
 
 // An object that is going to be exported by holiday-controller,js
 //calling the functions from the orm.js file
