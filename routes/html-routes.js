@@ -17,14 +17,14 @@ module.exports = function (app) {
   app.post('/', async (req, res) => {
     try {
       await Holiday.create({
-        cityname: "London",
-        review: "London is a UK capital city."
+        cityname: 'London',
+        review: 'London is a UK capital city.'
       });
       res.sendStatus(200);
     } catch (error) {
       console.log('Error on POST/:', error);
       res.sendStatus(500);
     }
-  })
+  });
 
 };

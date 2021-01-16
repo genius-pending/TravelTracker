@@ -1,5 +1,5 @@
 let express = require('express');
-let holidayORM = require('../models/holiday.js');
+let holidayORM = require('../models/Holiday.js');
 let cloudinary = require ('cloudinary').v2;
 
 let router = express.Router();
