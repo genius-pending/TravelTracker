@@ -54,6 +54,16 @@ const Holiday = db.define('holiday', {
   picture: {
     type: Sequelize.STRING
   }
+  // createdAt: {
+  //   allowNull: false,
+  //   defaultValue: Sequelize.fn('now'),
+  //   type: Sequelize.DATE
+  // },
+  // updatedAt: {
+  //   allowNull: false,
+  //   defaultValue: Sequelize.fn('now'),
+  //   type: Sequelize.DATE
+  // }
 });
 
 module.exports = Holiday;
