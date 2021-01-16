@@ -1,28 +1,29 @@
-let orm = require('../config/orm.js');
 
-// An object that is going to be exported by holiday-controller,js
-//calling the functions from the orm.js file
-let holidayORM = {
-  selectAll: function (response) {
-    orm.selectAll(function (data) {
-      response(data);
-    });
+const Sequelize = require('sequelize');
+const db = require('../config/db');
+
+const Holiday = db.define('holiday', {
+  id: {
+    primaryKey: true,
+    type: Sequelize.UUID,
+    defaultValue: Sequelize.UUIDV4
   },
-  insertOne: function (cityname, hotel, restaurant, review, picture, response) {
-    orm.insertOne(cityname, hotel, restaurant, review, picture, function (data) {
-      response(data);
-    });
+  cityname: {
+    type: Sequelize.STRING,
+    allowNull: false
   },
-  updateOne: function (id, response) {
-    orm.updateOne(id, function (data) {
-      response(data);
-    });
+  review: {
+    type: Sequelize.STRING,
+    allowNull: false
   },
-  deleteOne: function (id, response) {
-    orm.deleteOne(id, function (data) {
-      response(data);
-    });
+  hotel: {
+    type: Sequelize.STRING
+  },
+  restaurant: {
+    type: Sequelize.STRING
+  },
+  picture: {
+    type: Sequelize.STRING
   }
-};
-
-module.exports = holidayORM;
+});
+module.exports = Holiday;

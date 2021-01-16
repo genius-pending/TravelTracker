@@ -5,11 +5,12 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 require('dotenv').config();
 
-// Setting up PORT if .env exists or default to 3030
-const PORT = process.env.PORT || 3030;
 
 // Express app and middleware
 const app = express();
+
+// Database
+const db = require('./config/db');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,17 +31,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-
 //serve static content from the public directory
 app.use(express.static(__dirname + '/public'));
 
-//require holiday-controller,js for the routes
-let routes = require('./controllers/holiday_controller.js');
+// Setting up PORT if .env exists or default to 3030
+const PORT = process.env.PORT || 3030;
 
-app.use('/', routes);
-app.use('/:id', routes);
-
-app.listen(PORT, function() {
-  console.log('Hello and welcome to project 2 express server');
-  console.log('I am running on port', PORT);
-});
+(async () => {
+  try {
+    await db.authenticate();
+    console.log('Database connected...');
+    await db.sync();
+    console.log('Models sync...');
+    app.listen(PORT);
+    console.log('Server running on port', PORT);
+  } catch (error) {
+    console.log('Error while starting app:', error);
+    process.exit(1);
+  }
+})();
