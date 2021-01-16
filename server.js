@@ -39,6 +39,7 @@ let routes = require('./controllers/holiday_controller.js');
 
 app.use('/', routes);
 app.use('/:id', routes);
+app.use("/api", require("./routes/cloudinary-routes"))
 
 app.listen(PORT, function() {
   console.log('Hello and welcome to project 2 express server');
