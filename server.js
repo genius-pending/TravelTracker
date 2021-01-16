@@ -11,6 +11,18 @@ const PORT = process.env.PORT || 3030;
 // Express app and middleware
 const app = express();
 
+// Database
+const db = require('./config/db');
+// Test db
+(async () => {
+  try {
+    await db.authenticate();
+    console.log('Database connected...');
+  } catch (error) {
+    console.log('Error while connecting to database:', error);
+  }
+})();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
