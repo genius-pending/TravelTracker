@@ -8,9 +8,9 @@ const port = 3000;
 
 // cloudinary configuration
 cloudinary.config({
-  Cloud_Name: process.env.CLOUDINARY_CLOUD_NAME,
-  Api_Key: process.env.CLOUDINARY_API_KEY,
-  Api_Secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_Name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_Key: process.env.CLOUDINARY_API_KEY,
+  api_Secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 app.get('/', (req, res) => res.json({ message: 'Hello World!' }));
@@ -18,7 +18,7 @@ app.get('/', (req, res) => res.json({ message: 'Hello World!' }));
 const upload = multer();
 
 app.post('/photos/upload', upload.single('image'), (req, res) => {
-  const cld_upload_stream = cloudinary.uploader.upload_stream(
+  const cld_Upload_Stream = cloudinary.uploader.upload_stream(
     {
       folder: 'images',
     },
@@ -31,7 +31,7 @@ app.post('/photos/upload', upload.single('image'), (req, res) => {
       return res.json({ success: false, payload: result });
     }
   );
-  streamifier.createReadStream(req.file.buffer).pipe(cld_upload_stream);
+  streamifier.createReadStream(req.file.buffer).pipe(cld_Upload_Stream);
 });
 
 app.listen(port, () =>
