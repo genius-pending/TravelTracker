@@ -195,21 +195,21 @@
             </div>
         </main>
 <script>
-    const submitButton = $('submitBtn');
-    const photoFile = $('#photoFile');
-    submitButton.click((event) => {
-        event.preventDefault();
-        const formData = new formData(); 
-        formData.append('image', photoFile)
-    });
-    $.post({
-        url: "/photos/upload",
-        data: formData,
-        processData: false,
-        contentType: false
-    }).then((res) => {
-        console.log(res)
-    })
+    // const submitButton = $('submitBtn');
+    // const photoFile = $('#photoFile');
+    // submitButton.click((event) => {
+    //     event.preventDefault();
+    //     const formData = new formData(); 
+    //     formData.append('image', photoFile)
+    // });
+    // $.post({
+    //     url: "/photos/upload",
+    //     data: formData,
+    //     processData: false,
+    //     contentType: false
+    // }).then((res) => {
+    //     console.log(res)
+    // })
 </script>
 </body>
 

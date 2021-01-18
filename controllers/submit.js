@@ -1,10 +1,10 @@
 const Holiday = require('../models/Holiday');
 
 module.exports = {
-  submitReview: async (data) => {
+  submitReview: async (data, res) => {
     try {
       await Holiday.create(data);
-      res.sendStatus(200);
+      res.send(data)
     } catch (error) {
       console.log('Error on POST/:', error);
       res.sendStatus(500);

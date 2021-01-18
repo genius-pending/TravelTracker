@@ -12,14 +12,15 @@ module.exports = function (app) {
   });
 
   app.get('/browse', (req, res) => {
-    render.submitHTML(res);
+    render.browseHTML(res);
   });
 
   app.get('/review', (req, res) => {
-    render.submitHTML(res);
+   render.reviewHTML(res);
   });
 
-  app.post('/submit', (req) => {
-    submit.submitReview(req.body);
+  app.post('/submit/review', (req, res) => {
+    console.log("Submit post working")
+   // submit.submitReview(req.body, res);
   });
 };
