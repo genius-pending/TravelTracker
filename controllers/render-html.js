@@ -19,5 +19,21 @@ module.exports = {
       console.log('Error on GET/:', error);
       res.sendStatus(500);
     }
+  },
+  browseHTML: async (res) => {
+    try {
+      res.render('browse');
+    } catch (error) {
+      console.log('Error on GET/:', error);
+      res.sendStatus(500);
+    }
+  },
+  reviewHTML: async (res) => {
+    try {
+      res.render('review');
+    } catch (error) {
+      console.log('Error on GET/:', error);
+      res.sendStatus(500);
+    }
   }
 };

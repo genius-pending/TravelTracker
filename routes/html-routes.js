@@ -11,6 +11,14 @@ module.exports = function (app) {
     render.submitHTML(res);
   });
 
+  app.get('/browse', (req, res) => {
+    render.submitHTML(res);
+  });
+
+  app.get('/review', (req, res) => {
+    render.submitHTML(res);
+  });
+
   app.post('/', async (req, res) => {
     try {
       await Holiday.create({
