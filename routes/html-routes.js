@@ -1,4 +1,3 @@
-const Holiday = require('../models/Holiday');
 const render = require('../controllers/render-html');
 const submit = require('../controllers/submit');
 
@@ -20,7 +19,7 @@ module.exports = function (app) {
     render.submitHTML(res);
   });
 
-  app.post('/submit', (req, res) => {
+  app.post('/submit', (req) => {
     submit.submitReview(req.body);
   });
 };
