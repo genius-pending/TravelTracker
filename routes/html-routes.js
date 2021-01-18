@@ -1,17 +1,14 @@
-// const db = require('../config/db');
 const Holiday = require('../models/Holiday');
+const render = require('../controllers/render-html');
 
 module.exports = function (app) {
 
-  app.get('/', async (req, res) => {
-    try {
-      const results = await Holiday.findAll();
-      console.log(results);
-      res.sendStatus(200);
-    } catch (error) {
-      console.log('Error on GET/:', error);
-      res.sendStatus(500);
-    }
+  app.get('/', (req, res) => {
+    render.indexHTML(res);
+  });
+
+  app.get('/submit', (req, res) => {
+    render.submitHTML(res);
   });
 
   app.post('/', async (req, res) => {
@@ -26,5 +23,4 @@ module.exports = function (app) {
       res.sendStatus(500);
     }
   });
-
 };
