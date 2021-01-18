@@ -4,13 +4,13 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 require('dotenv').config();
+// Database
+const db = require('./config/db');
 
 
 // Express app and middleware
 const app = express();
 
-// Database
-const db = require('./config/db');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -41,6 +41,7 @@ app.use("/api", require("./routes/cloudinary-routes"))
 // Setting up PORT if .env exists or default to 3030
 const PORT = process.env.PORT || 3030;
 
+// iffe for connection to db and server
 (async () => {
   try {
     await db.authenticate();
