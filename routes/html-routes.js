@@ -1,5 +1,6 @@
 const Holiday = require('../models/Holiday');
 const render = require('../controllers/render-html');
+const submit = require('../controllers/submit');
 
 module.exports = function (app) {
 
@@ -19,16 +20,7 @@ module.exports = function (app) {
     render.submitHTML(res);
   });
 
-  app.post('/', async (req, res) => {
-    try {
-      await Holiday.create({
-        cityname: 'London',
-        review: 'London is a UK capital city.'
-      });
-      res.sendStatus(200);
-    } catch (error) {
-      console.log('Error on POST/:', error);
-      res.sendStatus(500);
-    }
+  app.post('/submit', (req, res) => {
+    submit.submitReview(req.body);
   });
 };
