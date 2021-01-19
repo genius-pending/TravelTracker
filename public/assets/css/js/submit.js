@@ -1,5 +1,5 @@
 const submitButton = $('#submitButton');
-const photoFile = $('#photoFile');
+//const photoFile = $('#photoFile');
 let formData;
 submitButton.click((event) => {
   console.log('clicking');
