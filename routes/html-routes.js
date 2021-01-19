@@ -16,7 +16,6 @@ module.exports = function (app) {
   });
 
   app.get('/review', (req, res) => {
-<<<<<<< HEAD
    render.reviewHTML(res);
 =======
     render.reviewHTML(res);
