@@ -22,7 +22,10 @@ module.exports = {
   },
   browseHTML: async (res) => {
     try {
-      res.render('browse');
+      const results = await Holiday.findAll({
+        raw: true
+      });
+      res.render('browse', {results});
     } catch (error) {
       console.log('Error on GET/:', error);
       res.sendStatus(500);
