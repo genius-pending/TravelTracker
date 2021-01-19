@@ -1,5 +1,5 @@
 const render = require('../controllers/render-html');
-const submit = require('../controllers/submit');
+//const submit = require('../controllers/submit');
 
 module.exports = function (app) {
 
@@ -16,15 +16,11 @@ module.exports = function (app) {
   });
 
   app.get('/review', (req, res) => {
-<<<<<<< HEAD
-   render.reviewHTML(res);
-=======
     render.reviewHTML(res);
->>>>>>> main
   });
 
-  app.post('/submit/review', (req, res) => {
-    console.log("Submit post working")
-   // submit.submitReview(req.body, res);
-  });
+  /*app.post('/submit/review', (req, res) => {
+    console.log('Submit post working');
+    // submit.submitReview(req.body, res);
+  });*/
 };

@@ -1,7 +1,7 @@
 const express = require('express');
-const cloudinary = require('cloudinary').v2; 
+const cloudinary = require('cloudinary').v2;
 const multer = require('multer');
-const router = express.Router(); 
+const router = express.Router();
 const upload = multer();
 
 // cloudinary configuration
@@ -11,23 +11,24 @@ cloudinary.config({
   apiSecret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.post('/photos/upload'), upload.single('image'), (req,res) => {
-  console.log("cloudinary triggered")
+router.post('/photos/upload', upload.single('image'), (req, res) => {
+  console.log('cloudinary triggered');
   const cldUploadStream = cloudinary.uploader.upload_stream(
     {
       folder: 'images',
     },
     (err, result) => {
-      if (err)
+      if (err){
         return res.status(500).json({
           success: false,
-          payload: { message: 'Unable to upload image' },
+          payload: { message: 'Unable to upload image' }
         });
+      }
       return res.json({ success: false, payload: result });
     }
   );
   streamifier.createReadStream(req.file.buffer).pipe(cldUploadStream);
-};
+});
 
 module.exports = router;
 

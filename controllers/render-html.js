@@ -12,7 +12,7 @@ module.exports = {
       res.sendStatus(500);
     }
   },
- submitHTML: async (res) => {
+  submitHTML: async (res) => {
     try {
       res.render('submit');
     } catch (error) {
