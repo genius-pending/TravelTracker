@@ -16,10 +16,15 @@ module.exports = function (app) {
   });
 
   app.get('/review', (req, res) => {
+<<<<<<< HEAD
+   render.reviewHTML(res);
+=======
     render.reviewHTML(res);
+>>>>>>> main
   });
 
-  app.post('/submit', (req) => {
-    submit.submitReview(req.body);
+  app.post('/submit/review', (req, res) => {
+    console.log("Submit post working")
+   // submit.submitReview(req.body, res);
   });
 };
