@@ -1,6 +1,6 @@
 let express = require('express');
 let holidayORM = require('../models/Holiday.js');
-let cloudinary = require ('cloudinary').v2;
+
 
 let router = express.Router();
 //create routers and export them
@@ -36,5 +36,5 @@ router.delete('/:id', function(req,res) {
   });
 });
 
-module.exports = router,cloudinary;
+module.exports = router;
 
