@@ -1,5 +1,5 @@
 const submitButton = $('#submitButton');
-const photoFile = $('#photoFile');
+//const photoFile = $('#photoFile');
 let formData;
 submitButton.click((event) => {
   console.log('clicking');
@@ -14,7 +14,7 @@ if(reviewText.val().trim().length < 1){
 console.log('Please enter a value');
 }
   $.post({
-    url: '/submit/review/${photoFile}',
+    url: '/submit/review',
     data: formData,
     processData: false,
     contentType: false,
