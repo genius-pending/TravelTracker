@@ -11,7 +11,7 @@ cloudinary.config({
   apiSecret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.post('/photos/upload', upload.single('image'), (req, res) => {
+router.post('/submit/review', upload.single('image'), (req, res) => {
   console.log('cloudinary triggered');
   const cldUploadStream = cloudinary.uploader.upload_stream(
     {
