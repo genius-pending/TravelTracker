@@ -17,9 +17,7 @@ module.exports = function (app) {
 
   app.get('/review', (req, res) => {
    render.reviewHTML(res);
-=======
-    render.reviewHTML(res);
->>>>>>> main
+    
   });
 
   app.post('/submit/review', (req, res) => {
