@@ -21,6 +21,12 @@ $(document).ready(function() {
 
 const file = result.info.url;
 */
+var cropMyWidget
+
+var myCropWidget = cloudinary.createUploadWidget({
+  cloudName: 'demo', uploadPreset: 'preset1', folder: 'widgetUpload', cropping: true}, 
+  (error, result) => { console.log(error, result) })
+
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'CLOUDINARY_CLOUD_NAME', 
   uploadPreset: 'my_preset'}, (error, result) => { 
@@ -34,3 +40,11 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   console.log("upload clicked")
       myWidget.open();
     }, false);
+
+    cloudinary.openUploadWidget({
+      cloudName: "demo", uploadPreset: "preset1",
+      sources: [ 'local', 'url', 'image_search'],
+      googleApiKey: 'AIrFcR8hKiRo',
+      searchBySites: ["all", "cloudinary.com"],
+      searchByRights: true }, (error, result) => { });
+    
