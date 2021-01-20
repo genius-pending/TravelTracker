@@ -22,7 +22,7 @@ submitReview(req.body, )
     console.log(result);*/
     res.redirect('/');
   });
-});
+
 
 //update a holiday's status
 router.put('/:id', function(req,res) {
