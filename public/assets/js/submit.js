@@ -32,7 +32,7 @@ $(document).ready(function () {
 //global variable for the city
 var city ='';
 //global variable for the review
-var review =''; 
+var review ='';
 
 var myWidget = cloudinary.createUploadWidget(
   {
