@@ -29,20 +29,6 @@ $(document).ready(function () {
 });
 
 // Cloudinary
-let myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: 'phase2projectbirmingham',
-    uploadPreset: 'xuimcgyf',
-  },
-  (error, result) => {
-    // Log whatever we have back from cloudinary after upload
-    if (!error && result && result.event === 'success') {
-      console.log('Done! Here is the image info: ', result.info);
-      pictureURL = result.info.url;
-    }
-  }
-);
-
 //global variable for the city
 var city = "";
 //global variable for the review
