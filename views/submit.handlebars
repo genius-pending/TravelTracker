@@ -58,7 +58,8 @@
     {{!-- Review field --}}
     <div class="mb-3">
         <label for="city-review" class="form-label">Share your experience</label>
-        <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review" rows="3"></textarea>
+        <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
+            rows="3"></textarea>
     </div>
     {{!-- Add picture --}}
     <div class="mb-3">
@@ -67,10 +68,11 @@
             <input type='file' name='image' />
         </form>
     </div>
-    
+
     <div>
         <h4>Add more information</h2>
     </div>
+    {{!-- Fields for more info - hidden --}}
     <div class="d-none" id="hotel-review-input">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Hotel</label>
@@ -91,13 +93,16 @@
             <textarea class="form-control" rows="3"></textarea>
         </div>
     </div>
+    {{!-- Buttons to show more info --}}
     <div class="mb-3">
         <button type="button" id="hotel-review" class="btn btn-secondary btn-sm">Hotel Review</button>
         <button type="button" id="restaurant-review" class="btn btn-secondary btn-sm">Restaurant Review</button>
         <button type="button" id="activity-review" class="btn btn-secondary btn-sm">Activity Review</button>
     </div>
+
+    {{!-- Submit Btn --}}
     <div>
-        <button type="button" id="submitButton" class="btn btn-secondary btn-lg">Submit your review</button>
+        <button type="button" id="submit-btn" class="btn btn-secondary btn-lg">Submit your review</button>
     </div>
 </main>
 
@@ -107,4 +112,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
     </script>
-<script src="/assets/js/reviews.js"></script>
+<script src="/assets/js/submit.js" defer></script>
