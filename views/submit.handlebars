@@ -1,3 +1,4 @@
+{{!-- Navbar --}}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-md">
         <a class="navbar-brand me-5" href="/">Travel Tracker</a>
@@ -18,10 +19,10 @@
                     <a class="nav-link" href="/browse" tabindex="-1">Browse Reviews</a>
                 </li>
             </ul>
-          <!--  <form>-->
-                <button id="upload_widget" class="cloudinary-button">Upload files</button>
+            <!--  <form>-->
+            <button id="upload_widget" class="cloudinary-button">Upload files</button>
 
-              <!--  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+            <!--  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
                 <script type="text/javascript">
                     var myWidget = cloudinary.createUploadWidget({
@@ -38,11 +39,14 @@
                         myWidget.open();
                     }, false);
                 </script>-->
-           <!--  <form>-->
+            <!--  <form>-->
         </div>
     </div>
 </nav>
+
 <main class="container mt-3">
+
+    {{!-- Header --}}
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Submit a review</h1>
@@ -51,23 +55,42 @@
             <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
         </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">City</label>
-        <input type="email" class="form-control" id="city-name-text" placeholder="London">
+
+    {{!-- Form --}}
+    <div class="row">
+        {{!-- User name field --}}
+        <div class="col-lg-6 col-md-12">
+            <div class="mb-3">
+                <label for="user-name" class="form-label">Your name</label>
+                <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
+            </div>
+        </div>
+        {{!-- City name field --}}
+        <div class="col-lg-6 col-md-12">
+            <div class="mb-3">
+                <label for="city-name" class="form-label">City you have visited</label>
+                <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
+            </div>
+        </div>
     </div>
+    {{!-- Review field --}}
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Type your review here</label>
-        <textarea class="form-control" id="city-review-text" rows="3"></textarea>
+        <label for="city-review" class="form-label">Share your experience</label>
+        <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
+            rows="3"></textarea>
     </div>
+    {{!-- Add picture --}}
     <div class="mb-3">
         <label for="formFile" class="form-label">Add a picture</label>
         <form class="form-control" action='/api/images' method="post" enctype="multipart/form-data">
             <input type='file' name='image' />
         </form>
     </div>
+
     <div>
         <h4>Add more information</h2>
     </div>
+    {{!-- Fields for more info - hidden --}}
     <div class="d-none" id="hotel-review-input">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Hotel</label>
@@ -88,25 +111,25 @@
             <textarea class="form-control" rows="3"></textarea>
         </div>
     </div>
+    {{!-- Buttons to show more info --}}
     <div class="mb-3">
         <button type="button" id="hotel-review" class="btn btn-secondary btn-sm">Hotel Review</button>
         <button type="button" id="restaurant-review" class="btn btn-secondary btn-sm">Restaurant Review</button>
         <button type="button" id="activity-review" class="btn btn-secondary btn-sm">Activity Review</button>
     </div>
+
+    {{!-- Submit Btn --}}
     <div>
-        <button type="button" id="submitButton" class="btn btn-secondary btn-lg">Submit your review</button>
+        <button type="button" id="submit-btn" class="btn btn-secondary btn-lg">Submit your review</button>
     </div>
 </main>
 
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
-<script src="/assets/css/js/submit.js"></script>
-
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
     integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
-</script>
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
-</script>
-<script src="/assets/css/js/reviews.js"></script>
-
+    </script>
+<script src="/assets/js/submit.js" defer></script>

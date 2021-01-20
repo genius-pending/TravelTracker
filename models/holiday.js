@@ -8,6 +8,10 @@ const Holiday = db.define('holiday', {
     type: Sequelize.UUID,
     defaultValue: Sequelize.UUIDV4
   },
+  username: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   cityname: {
     type: Sequelize.STRING,
     allowNull: false
