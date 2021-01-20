@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 //post a new holiday to the db
 router.post('/', function(req, res) {
   holidayORM.insertOne(req.body.holiday, function(result) {
-    console.log(result);
+  console.log(result);
     res.redirect('/');
   });
 
