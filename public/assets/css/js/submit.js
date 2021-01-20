@@ -1,7 +1,7 @@
-  const submitButton = $('#submitButton');
+const submitButton = $('#submitButton');
 //const photoFile = $('#photoFile');
-  let formData;
-  submitButton.click((event) => {
+let formData;
+submitButton.click((event) => {
   console.log('clicking');
   event.preventDefault();
   const cityText = $('#city-name-text');
@@ -9,7 +9,7 @@
     console.log('Please enter a value');
   }
   const reviewText = $('#city-review-text');
-  if (reviewText.val().trim().length < 1); {
+  if (reviewText.val().trim().length < 1){
     console.log('Please enter a value');
   }
   $.post({
