@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
     console.log(result);
     res.redirect('/');
   });
-});
+
 
 //update a holiday's status
 router.put('/:id', function(req,res) {
@@ -37,4 +37,4 @@ router.delete('/:id', function(req,res) {
 });
 
 module.exports = router;
-
+})
