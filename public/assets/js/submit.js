@@ -30,9 +30,9 @@ $(document).ready(function () {
 
 // Cloudinary
 //global variable for the city
-var city = "";
+var city ='';
 //global variable for the review
-var review = ""; 
+var review =''; 
 
 var myWidget = cloudinary.createUploadWidget(
   {
@@ -47,8 +47,8 @@ var myWidget = cloudinary.createUploadWidget(
         review: review,
         picture: result.info.url,
       }).then (() => {
-        console.log('post request made')
-      })
+        console.log('post request made');
+      });
     }
   }
 );
