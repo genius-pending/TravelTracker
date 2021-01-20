@@ -1,7 +1,6 @@
 let express = require('express');
 let holidayORM = require('../models/Holiday.js');
-const submit = require('./submit');
-let submitReview = require('./submit')
+let submitReview = require('./submit');
 
 
 let router = express.Router();
@@ -17,11 +16,11 @@ router.get('/', function(req, res) {
 //post a new holiday to the db
 router.post('/', function(req, res) {
 submitReview(req.body, )
-  console.log("JSON recieved by post api endpoint", req.body)
+  console.log('JSON recieved by post api endpoint', req.body);
   /*holidayORM.insertOne(req.body.holiday, function(result) {
     console.log(result);*/
     res.redirect('/');
-  });
+    });
 
 
 //update a holiday's status

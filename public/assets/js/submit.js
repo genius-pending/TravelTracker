@@ -43,6 +43,29 @@ let myWidget = cloudinary.createUploadWidget(
   }
 );
 
+//global variable for the city
+var city = "";
+//global variable for the review
+var review = ""; 
+
+var myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: 'phase2projectbirmingham',
+    uploadPreset: 'xuimcgyf',
+  },
+  (error, result) => {
+    if (!error && result && result.event === 'success') {
+      console.log('Done! Here is the image info: ', result.info);
+      $.post('/',{
+        city: city,
+        review: review,
+        picture: result.info.url,
+      }).then (() => {
+        console.log('post request made')
+      })
+    }
+  }
+);
 document.getElementById('upload_widget').addEventListener(
   'click',
   function () {
