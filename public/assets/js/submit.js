@@ -1,5 +1,5 @@
+const submitButton = $('#submit-btn');
 $(document).ready(function () {
-  const submitButton = $('#submit-btn');
   submitButton.click((event) => {
     event.preventDefault();
     // $.post({
