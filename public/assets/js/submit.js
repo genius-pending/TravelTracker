@@ -1,7 +1,17 @@
 const submitButton = $('#submit-btn');
+let pictureURL;
 $(document).ready(function () {
   submitButton.click((event) => {
     event.preventDefault();
+    const userName = $('#user-name').val();
+    const cityName = $('#city-name').val();
+    const cityReview = $('#city-review').val();
+    console.log(`
+    user name: ${userName},
+    city name: ${cityName},
+    review: ${cityReview},
+    pictureURL: ${pictureURL}
+    `);
     // $.post({
     //   url: '/submit/review',
     //   data: formData,
@@ -18,6 +28,29 @@ $(document).ready(function () {
   });
 });
 
+// Cloudinary
+let myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: 'phase2projectbirmingham',
+    uploadPreset: 'xuimcgyf',
+  },
+  (error, result) => {
+    // Log whatever we have back from cloudinary after upload
+    if (!error && result && result.event === 'success') {
+      console.log('Done! Here is the image info: ', result.info);
+      pictureURL = result.info.url;
+    }
+  }
+);
+
+document.getElementById('upload_widget').addEventListener(
+  'click',
+  function () {
+    console.log('upload clicked');
+    myWidget.open();
+  },
+  false
+);
 
 
 /*const submitButton = $('#submitButton');
@@ -57,26 +90,6 @@ var myCropWidget = cloudinary.createUploadWidget(
   }
 );*/
 
-var myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: 'phase2projectbirmingham',
-    uploadPreset: 'xuimcgyf',
-  },
-  (error, result) => {
-    if (!error && result && result.event === 'success') {
-      console.log('Done! Here is the image info: ', result.info);
-    }
-  }
-);
-
-document.getElementById('upload_widget').addEventListener(
-  'click',
-  function () {
-    console.log('upload clicked');
-    myWidget.open();
-  },
-  false
-);
 
 /*cloudinary.openUploadWidget(
   {
