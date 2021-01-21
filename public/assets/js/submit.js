@@ -8,25 +8,36 @@ let picture;
 const validateInput = (userName, cityName, cityReview) => {
   if (userName.trim().length < 1) {
     nameError.css({ opacity: 1 });
+    $('#user-name').addClass('is-invalid');
     return false;
   }
   if (cityName.trim().length < 1) {
     cityError.css({ opacity: 1 });
+    $('#city-name').addClass('is-invalid');
     return false;
   }
   if (cityReview.trim().length < 100) {
     reviewError.css({ opacity: 1 });
+    $('#city-review').addClass('is-invalid');
     return false;
   }
   return true;
 };
 
+// Remove error messages from submit form
+const removeErrors = () => {
+  nameError.css({ opacity: 0 });
+  cityError.css({ opacity: 0 });
+  reviewError.css({ opacity: 0 });
+  $('#user-name').removeClass('is-invalid');
+  $('#city-name').removeClass('is-invalid');
+  $('#city-review').removeClass('is-invalid');
+};
+
 $(document).ready(function () {
   submitButton.click((event) => {
     event.preventDefault();
-    nameError.css({ opacity: 0 });
-    cityError.css({ opacity: 0 });
-    reviewError.css({ opacity: 0 });
+    removeErrors();
     const username = $('#user-name').val();
     const cityname = $('#city-name').val();
     const review = $('#city-review').val();
@@ -49,8 +60,6 @@ $(document).ready(function () {
         url: '/submit',
         data: formData,
         dataType: 'json',
-        // processData: false,
-        // contentType: false,
       }).then(() => {
         console.log('Im here');
         document.location.href = 'http://localhost:3000/browse';
@@ -81,11 +90,17 @@ let myWidget = cloudinary.createUploadWidget(
         <img src="${picture}" class="card-img-top" alt="Uploaded-picture-icon">
         <div class="card-body">
           <p class="card-text">Uploaded picture</p>
+          <a href="#" id="remove-uploaded" class="card-link">Remove</a>
         </div>
       </div>`);
     }
   }
 );
+
+// Click event for removing added image
+$('body').on('click', '#remove-uploaded', function() {
+  $('.uploaded-card').remove();
+});
 
 document.getElementById('upload_widget').addEventListener(
   'click',

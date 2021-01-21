@@ -4,8 +4,7 @@ module.exports = {
   indexHTML: async (res) => {
     try {
       // We may not need the follwing line - for now only for testing
-      const results = await Holiday.findAll();
-      console.log('Holiday database results:', results);
+      // const results = await Holiday.findAll();
       res.render('index');
     } catch (error) {
       console.log('Error on GET/:', error);
