@@ -2,7 +2,7 @@ const submitButton = $('#submit-btn');
 const nameError = $('#name-error');
 const cityError = $('#city-error');
 const reviewError = $('#review-error');
-let picture;
+let picture = '';
 
 // Check for input presence
 const validateInput = (userName, cityName, cityReview) => {
@@ -48,22 +48,15 @@ $(document).ready(function () {
       review,
       picture
     };
-    // console.log(`
-    // input: ${input},
-    // user name: ${username},
-    // city name: ${cityname},
-    // review: ${review},
-    // pictureURL: ${pictureURL}
-    // `);
     if (input) {
-      $.post({
+      $.ajax({
+        method: 'POST',
         url: '/submit',
         data: formData,
-        dataType: 'json',
-      }).then(() => {
-        console.log('Im here');
-        document.location.href = 'http://localhost:3000/browse';
-      }).catch((err) => {
+        dataType: 'json'
+      }).done(() => {
+        window.location.href = '/browse';
+      }).fail((err) => {
         if (err) {
           console.log('Error on post:', err);
         }
@@ -100,6 +93,7 @@ let myWidget = cloudinary.createUploadWidget(
 // Click event for removing added image
 $('body').on('click', '#remove-uploaded', function() {
   $('.uploaded-card').remove();
+  picture = '';
 });
 
 document.getElementById('upload_widget').addEventListener(
