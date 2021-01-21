@@ -19,27 +19,6 @@
                     <a class="nav-link" href="/browse" tabindex="-1">Browse Reviews</a>
                 </li>
             </ul>
-            <!--  <form>-->
-            <button id="upload_widget" class="cloudinary-button">Upload files</button>
-
-            <!--  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-
-                <script type="text/javascript">
-                    var myWidget = cloudinary.createUploadWidget({
-                        cloudName: 'phase2projectbirmingham',
-                        uploadPreset: 'xuimcgyf'
-                    }, (error, result) => {
-                        if (!error && result && result.event === "success") {
-                            console.log('Done! Here is the image info: ', result.info);
-                        }
-                    }
-                    )
-
-                    document.getElementById("upload_widget").addEventListener("click", function () {
-                        myWidget.open();
-                    }, false);
-                </script>-->
-            <!--  <form>-->
         </div>
     </div>
 </nav>
@@ -63,6 +42,7 @@
             <div class="mb-3">
                 <label for="user-name" class="form-label">Your name</label>
                 <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
+                <p id="name-error" class="form-error">Invalid name</p>
             </div>
         </div>
         {{!-- City name field --}}
@@ -70,6 +50,7 @@
             <div class="mb-3">
                 <label for="city-name" class="form-label">City you have visited</label>
                 <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
+                <p id="city-error" class="form-error">Invalid city</p>
             </div>
         </div>
     </div>
@@ -78,13 +59,11 @@
         <label for="city-review" class="form-label">Share your experience</label>
         <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
             rows="3"></textarea>
+        <p id="review-error" class="form-error">Review must be at least 100 characters</p>
     </div>
     {{!-- Add picture --}}
-    <div class="mb-3">
-        <label for="formFile" class="form-label">Add a picture</label>
-        <form class="form-control" action='/api/images' method="post" enctype="multipart/form-data">
-            <input type='file' name='image' />
-        </form>
+    <div class="mb-3 picture-upload">
+        <button id="upload_widget" class="cloudinary-button">Upload picture</button>
     </div>
 
     <div>

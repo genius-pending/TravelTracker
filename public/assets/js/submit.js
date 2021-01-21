@@ -1,32 +1,69 @@
 const submitButton = $('#submit-btn');
-let pictureURL;
+const nameError = $('#name-error');
+const cityError = $('#city-error');
+const reviewError = $('#review-error');
+let picture;
+
+// Check for input presence
+const validateInput = (userName, cityName, cityReview) => {
+  if (userName.trim().length < 1) {
+    nameError.css({ opacity: 1 });
+    return false;
+  }
+  if (cityName.trim().length < 1) {
+    cityError.css({ opacity: 1 });
+    return false;
+  }
+  if (cityReview.trim().length < 100) {
+    reviewError.css({ opacity: 1 });
+    return false;
+  }
+  return true;
+};
+
 $(document).ready(function () {
   submitButton.click((event) => {
     event.preventDefault();
-    const userName = $('#user-name').val();
-    const cityName = $('#city-name').val();
-    const cityReview = $('#city-review').val();
-    console.log(`
-    user name: ${userName},
-    city name: ${cityName},
-    review: ${cityReview},
-    pictureURL: ${pictureURL}
-    `);
-    // $.post({
-    //   url: '/submit/review',
-    //   data: formData,
-    //   processData: false,
-    //   contentType: false,
-    // }).then(() => {
-    //   console.log('running post request');
-    //   // console.log(res);
-    // }).catch((err) => {
-    //   if (err) {
-    //     console.log('Error on post:', err);
-    //   }
-    // })
+    nameError.css({ opacity: 0 });
+    cityError.css({ opacity: 0 });
+    reviewError.css({ opacity: 0 });
+    const username = $('#user-name').val();
+    const cityname = $('#city-name').val();
+    const review = $('#city-review').val();
+    const input = validateInput(username, cityname, review);
+    const formData = {
+      username,
+      cityname,
+      review,
+      picture
+    };
+    // console.log(`
+    // input: ${input},
+    // user name: ${username},
+    // city name: ${cityname},
+    // review: ${review},
+    // pictureURL: ${pictureURL}
+    // `);
+    if (input) {
+      $.post({
+        url: '/submit',
+        data: formData,
+        dataType: 'json',
+        // processData: false,
+        // contentType: false,
+      }).then(() => {
+        console.log('Im here');
+        document.location.href = 'http://localhost:3000/browse';
+      }).catch((err) => {
+        if (err) {
+          console.log('Error on post:', err);
+        }
+      });
+    }
   });
 });
+
+
 
 // Cloudinary
 let myWidget = cloudinary.createUploadWidget(
@@ -38,7 +75,14 @@ let myWidget = cloudinary.createUploadWidget(
     // Log whatever we have back from cloudinary after upload
     if (!error && result && result.event === 'success') {
       console.log('Done! Here is the image info: ', result.info);
-      pictureURL = result.info.url;
+      picture = result.info.url;
+      $('.picture-upload').append(`
+      <div class="card uploaded-card" style="width: 10rem;">
+        <img src="${picture}" class="card-img-top" alt="Uploaded-picture-icon">
+        <div class="card-body">
+          <p class="card-text">Uploaded picture</p>
+        </div>
+      </div>`);
     }
   }
 );
