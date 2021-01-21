@@ -34,8 +34,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 //serve static content from the public directory
 app.use(express.static(__dirname + '/public'));
 
-app.use('/api', require('./routes/cloudinary-routes'));
-app.use('/', require('./controllers/holiday_controller'));
+// app.use('/api', require('./routes/cloudinary-routes'));
 require('./routes/html-routes')(app);
 // Setting up PORT if .env exists or default to 3030
 const PORT = process.env.PORT || 3030;

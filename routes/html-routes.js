@@ -1,5 +1,5 @@
 const render = require('../controllers/render-html');
-//const submit = require('../controllers/submit');
+const submit = require('../controllers/submit');
 
 module.exports = function (app) {
 
@@ -19,8 +19,11 @@ module.exports = function (app) {
     render.reviewHTML(res);
   });
 
-  /*app.post('/submit/review', (req, res) => {
-    console.log('Submit post working');
-    // submit.submitReview(req.body, res);
-  });*/
+  // Post request - need to confirm with Andy
+  app.post('/submit', async (req, res) => {
+    const saved = await submit.submitReview(req.body);
+    if (saved === false) {
+      res.sendStatus(500);
+    }
+  });
 };

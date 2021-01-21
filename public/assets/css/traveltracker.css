@@ -1,1 +1,18 @@
+.form-error {
+  color: crimson;
+  margin: 0;
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 0.8rem;
+  line-height: 0.5;
+  opacity: 0;
+}
 
+#upload_widget {
+  background-color: #6c757d;
+}
+
+.uploaded-card {
+  display: inline-block;
+  margin-left: 5vw;
+}
