@@ -4,6 +4,23 @@ const cityError = $('#city-error');
 const reviewError = $('#review-error');
 let picture;
 
+// Check for input presence
+const validateInput = (userName, cityName, cityReview) => {
+  if (userName.trim().length < 1) {
+    nameError.css({ opacity: 1 });
+    return false;
+  }
+  if (cityName.trim().length < 1) {
+    cityError.css({ opacity: 1 });
+    return false;
+  }
+  if (cityReview.trim().length < 100) {
+    reviewError.css({ opacity: 1 });
+    return false;
+  }
+  return true;
+};
+
 $(document).ready(function () {
   submitButton.click((event) => {
     event.preventDefault();
@@ -19,7 +36,7 @@ $(document).ready(function () {
       cityname,
       review,
       picture
-    }
+    };
     // console.log(`
     // input: ${input},
     // user name: ${username},
@@ -31,37 +48,22 @@ $(document).ready(function () {
       $.post({
         url: '/submit',
         data: formData,
-        dataType: "json",
+        dataType: 'json',
         // processData: false,
         // contentType: false,
       }).then(() => {
-        console.log("I'm here");
-        document.location.href = "http://localhost:3000/browse";
+        console.log('Im here');
+        document.location.href = 'http://localhost:3000/browse';
       }).catch((err) => {
         if (err) {
           console.log('Error on post:', err);
         }
-      })
+      });
     }
   });
 });
 
-// Check for input presence 
-const validateInput = (userName, cityName, cityReview) => {
-  if (userName.trim().length < 1) {
-    nameError.css({ opacity: 1 });
-    return false;
-  }
-  if (cityName.trim().length < 1) {
-    cityError.css({ opacity: 1 });
-    return false;
-  }
-  if (cityReview.trim().length < 100) {
-    reviewError.css({ opacity: 1 });
-    return false;
-  }
-  return true;
-}
+
 
 // Cloudinary
 let myWidget = cloudinary.createUploadWidget(
