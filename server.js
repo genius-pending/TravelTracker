@@ -7,6 +7,11 @@ require('dotenv').config();
 // Database
 const db = require('./config/db');
 
+//postgres connection for heroku
+const sequelize = new sequelize(process.env.DATABASE_URL,{
+  dialect: 'postgres'
+});
+
 
 // Express app and middleware
 const app = express();
