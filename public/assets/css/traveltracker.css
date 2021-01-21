@@ -18,6 +18,10 @@
   background-position: bottom;
 }
 
+.bg-img-submit {
+  background-image: url('./grandmother-1822564_1920.png');
+}
+
 .bd-placeholder-img{
   background-image: url('./beer-garden-3771924_640.png');
   width: 400;

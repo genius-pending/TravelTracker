@@ -26,7 +26,7 @@
 <main class="container mt-3">
 
     {{!-- Header --}}
-    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="p-4 p-md-5 text-white rounded bg-dark bg-img-submit">
         <div class="col px-0">
             <h1 class="display-4 font-italic">Submit a review</h1>
             <p class="lead my-3">Join the community, don't just base an experience on a number. Share your thoughts of a
@@ -36,72 +36,74 @@
     </div>
 
     {{!-- Form --}}
-    <div class="row">
-        {{!-- User name field --}}
-        <div class="col-lg-6 col-md-12">
-            <div class="mb-3">
-                <label for="user-name" class="form-label text-white">Your name</label>
-                <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
-                <p id="name-error" class="form-error">Invalid name</p>
+    <div class="bg-dark px-2 py-3 rounded">
+        <div class="row">
+            {{!-- User name field --}}
+            <div class="col-lg-6 col-md-12">
+                <div class="mb-3">
+                    <label for="user-name" class="form-label text-white">Your name</label>
+                    <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
+                    <p id="name-error" class="form-error">Invalid name</p>
+                </div>
+            </div>
+            {{!-- City name field --}}
+            <div class="col-lg-6 col-md-12">
+                <div class="mb-3">
+                    <label for="city-name" class="form-label text-white">City you have visited</label>
+                    <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
+                    <p id="city-error" class="form-error">Invalid city</p>
+                </div>
             </div>
         </div>
-        {{!-- City name field --}}
-        <div class="col-lg-6 col-md-12">
+        {{!-- Review field --}}
+        <div class="mb-3">
+            <label for="city-review" class="form-label text-white">Share your experience</label>
+            <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
+                rows="3"></textarea>
+            <p id="review-error" class="form-error">Review must be at least 100 characters</p>
+        </div>
+        {{!-- Add picture --}}
+        <div class="mb-3 picture-upload">
+            <button type="button" id="upload_widget" class="btn btn-light">Upload picture</button>
+        </div>
+
+        <div>
+            <h4 class="text-white">Add more information</h2>
+        </div>
+        {{!-- Fields for more info - hidden --}}
+        <div class="d-none" id="hotel-review-input">
             <div class="mb-3">
-                <label for="city-name" class="form-label text-white">City you have visited</label>
-                <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
-                <p id="city-error" class="form-error">Invalid city</p>
+                <label for="exampleFormControlInput1" class="form-label text-white">Hotel</label>
+                <input type="email" class="form-control" id="hotel-name-text" placeholder="The Hilton London">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label text-white">Type your review here</label>
+                <textarea class="form-control" id="hotel-review-text" rows="3"></textarea>
             </div>
         </div>
-    </div>
-    {{!-- Review field --}}
-    <div class="mb-3">
-        <label for="city-review" class="form-label text-white">Share your experience</label>
-        <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
-            rows="3"></textarea>
-        <p id="review-error" class="form-error">Review must be at least 100 characters</p>
-    </div>
-    {{!-- Add picture --}}
-    <div class="mb-3 picture-upload">
-        <button type="button" id="upload_widget" class="cloudinary-button btn-light">Upload picture</button>
-    </div>
+        <div class="d-none" id="restaurant-review-input">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label text-white">Restaurant</label>
+                <input type="email" class="form-control" id="restaurant-name-text" placeholder="The Ledbury">
+            </div>
+            <div class="mb-3" id="restaurant-review-text">
+                <label for="exampleFormControlTextarea1" class="form-label text-white">Type your review here</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+        {{!-- Buttons to show more info --}}
+        <div class="mb-3">
+            <button type="button" id="hotel-review" class="btn btn-light btn-sm">Hotel Review</button>
+            <button type="button" id="restaurant-review" class="btn btn-light btn-sm">Restaurant Review</button>
+        </div>
 
-    <div>
-        <h4 class="text-white">Add more information</h2>
-    </div>
-    {{!-- Fields for more info - hidden --}}
-    <div class="d-none" id="hotel-review-input">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Hotel</label>
-            <input type="email" class="form-control" id="hotel-name-text" placeholder="London">
+        {{!-- Submit Btn --}}
+        <div>
+            <button type="button" id="submit-btn" class="btn btn-light btn-lg">Submit your review</button>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Type your review here</label>
-            <textarea class="form-control" id="hotel-review-text" rows="3"></textarea>
-        </div>
-    </div>
-    <div class="d-none" id="restaurant-review-input">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Restaurant</label>
-            <input type="email" class="form-control" id="restaurant-name-text" placeholder="London">
-        </div>
-        <div class="mb-3" id="restaurant-review-text">
-            <label for="exampleFormControlTextarea1" class="form-label">Type your review here</label>
-            <textarea class="form-control" rows="3"></textarea>
-        </div>
-    </div>
-    {{!-- Buttons to show more info --}}
-    <div class="mb-3">
-        <button type="button" id="hotel-review" class="btn btn-light btn-sm">Hotel Review</button>
-        <button type="button" id="restaurant-review" class="btn btn-light btn-sm">Restaurant Review</button>
-        <button type="button" id="activity-review" class="btn btn-light btn-sm">Activity Review</button>
-    </div>
-
-    {{!-- Submit Btn --}}
-    <div>
-        <button type="button" id="submit-btn" class="btn btn-light btn-lg">Submit your review</button>
     </div>
 </main>
+
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
@@ -111,4 +113,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
 </script>
+<script src="/assets/js/reviews.js" defer></script>
 <script src="/assets/js/submit.js" defer></script>
