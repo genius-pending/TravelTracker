@@ -27,11 +27,11 @@
 
     {{!-- Header --}}
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
+        <div class="col px-0">
             <h1 class="display-4 font-italic">Submit a review</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
-                efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+            <p class="lead my-3">Join the community, don't just base an experience on a number. Share your thoughts of a
+                trip, add on specific information about a hotel or restaurant that someone else may want to learn about,
+                help taylor someone else's trip</p>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
         {{!-- User name field --}}
         <div class="col-lg-6 col-md-12">
             <div class="mb-3">
-                <label for="user-name" class="form-label">Your name</label>
+                <label for="user-name" class="form-label text-white">Your name</label>
                 <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
                 <p id="name-error" class="form-error">Invalid name</p>
             </div>
@@ -48,7 +48,7 @@
         {{!-- City name field --}}
         <div class="col-lg-6 col-md-12">
             <div class="mb-3">
-                <label for="city-name" class="form-label">City you have visited</label>
+                <label for="city-name" class="form-label text-white">City you have visited</label>
                 <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
                 <p id="city-error" class="form-error">Invalid city</p>
             </div>
@@ -56,18 +56,18 @@
     </div>
     {{!-- Review field --}}
     <div class="mb-3">
-        <label for="city-review" class="form-label">Share your experience</label>
+        <label for="city-review" class="form-label text-white">Share your experience</label>
         <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
             rows="3"></textarea>
         <p id="review-error" class="form-error">Review must be at least 100 characters</p>
     </div>
     {{!-- Add picture --}}
     <div class="mb-3 picture-upload">
-        <button id="upload_widget" class="cloudinary-button">Upload picture</button>
+        <button type="button" id="upload_widget" class="cloudinary-button btn-light">Upload picture</button>
     </div>
 
     <div>
-        <h4>Add more information</h2>
+        <h4 class="text-white">Add more information</h2>
     </div>
     {{!-- Fields for more info - hidden --}}
     <div class="d-none" id="hotel-review-input">
@@ -92,14 +92,14 @@
     </div>
     {{!-- Buttons to show more info --}}
     <div class="mb-3">
-        <button type="button" id="hotel-review" class="btn btn-secondary btn-sm">Hotel Review</button>
-        <button type="button" id="restaurant-review" class="btn btn-secondary btn-sm">Restaurant Review</button>
-        <button type="button" id="activity-review" class="btn btn-secondary btn-sm">Activity Review</button>
+        <button type="button" id="hotel-review" class="btn btn-light btn-sm">Hotel Review</button>
+        <button type="button" id="restaurant-review" class="btn btn-light btn-sm">Restaurant Review</button>
+        <button type="button" id="activity-review" class="btn btn-light btn-sm">Activity Review</button>
     </div>
 
     {{!-- Submit Btn --}}
     <div>
-        <button type="button" id="submit-btn" class="btn btn-secondary btn-lg">Submit your review</button>
+        <button type="button" id="submit-btn" class="btn btn-light btn-lg">Submit your review</button>
     </div>
 </main>
 
@@ -107,8 +107,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
     integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
-    </script>
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
-    </script>
+</script>
 <script src="/assets/js/submit.js" defer></script>
