@@ -25,5 +25,6 @@ module.exports = function (app) {
     if (saved === false) {
       res.sendStatus(500);
     }
+    res.json({});
   });
 };
