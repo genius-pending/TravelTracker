@@ -7,3 +7,13 @@ $(document).ready(function () {
     }
   });
 });
+
+$(document).ready(function () {
+  $('#restaurant-review').click(function () {
+    if ($('#restaurant-review-input').hasClass('d-none')) {
+      $('#restaurant-review-input').removeClass('d-none');
+    } else {
+      $('#restaurant-review-input').addClass('d-none');
+    }
+  });
+});

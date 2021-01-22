@@ -8,11 +8,26 @@
   opacity: 0;
 }
 
-#upload_widget {
-  background-color: #6c757d;
-}
-
 .uploaded-card {
   display: inline-block;
   margin-left: 5vw;
+}
+
+.top-bg-home {
+  background-image: url('./pexels-burst-374870.png');
+  background-position: bottom;
+}
+
+.bg-img-submit {
+  background-image: url('./grandmother-1822564_1920.png');
+}
+
+.bd-placeholder-img{
+  background-image: url('./beer-garden-3771924_640.png');
+  width: 400;
+  height: 250;
+}
+
+.card {
+  margin-bottom: 20px;
 }
