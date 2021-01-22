@@ -28,4 +28,5 @@ if (process.env.JAWSDB_URL) {
         acquire: 30000,
         idle: 10000,
       },
-  })};
+    });
+}
