@@ -32,7 +32,9 @@ module.exports = {
       const results = await Holiday.findAll({
         raw: true
       });
-      res.render('browse', {results});
+      res.render('browse', {results, helpers: {
+        dateFormat: helpers.dateFormat
+      }});
     } catch (error) {
       console.log('Error on GET/:', error);
       res.sendStatus(500);

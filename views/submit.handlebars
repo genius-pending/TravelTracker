@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="">
+        <div class="collapse navbar-collapse" id="navbarsExample07XL">
             <ul class="navbar-nav me-auto mb-0">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/">Home</a>
@@ -62,25 +62,27 @@
                 name="city-review" rows="3"></textarea>
             <p id="review-error" class="form-error">Review must be between 100 and 500 characters</p>
         </div>
-        {{!-- Fields for more info - hidden --}}
+        {{!-- Fields for more info - hidden by default --}}
         <div class="d-none" id="hotel-review-input">
+            {{!-- Hotel review --}}
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label text-white">Hotel</label>
-                <input type="email" class="form-control" id="hotel-name-text" placeholder="The Hilton London">
+                <label for="hotel-name" class="form-label text-white">Hotel</label>
+                <input class="form-control" id="hotel-name-text" placeholder="Hotel name" name="hotel-name">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label text-white">Type your review here</label>
-                <textarea class="form-control" id="hotel-review-text" rows="3"></textarea>
+                <label for="hotel-reviev" class="form-label text-white">Review</label>
+                <textarea class="form-control" id="hotel-review-text" rows="3" placeholder="Input your review" maxlength="250" name="hotel-review"></textarea>
             </div>
         </div>
         <div class="d-none" id="restaurant-review-input">
+            {{!-- Restaurant review --}}
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label text-white">Restaurant</label>
-                <input type="email" class="form-control" id="restaurant-name-text" placeholder="The Ledbury">
+                <label for="restaurant-name" class="form-label text-white">Restaurant</label>
+                <input class="form-control" id="restaurant-name-text" placeholder="Hotel name" name="restaurant-name">
             </div>
-            <div class="mb-3" id="restaurant-review-text">
-                <label for="exampleFormControlTextarea1" class="form-label text-white">Type your review here</label>
-                <textarea class="form-control" rows="3"></textarea>
+            <div class="mb-3">
+                <label for="restaurant-review" class="form-label text-white">Input your review here</label>
+                <textarea class="form-control" rows="3" id="restaurant-review-text" placeholder="Input your review" name="restaurant-review" maxlength="250"></textarea>
             </div>
         </div>
         {{!-- Buttons to show more info --}}

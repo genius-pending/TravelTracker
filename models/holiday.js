@@ -23,7 +23,13 @@ const Holiday = db.define('holiday', {
   hotel: {
     type: Sequelize.STRING
   },
+  hotelrev: {
+    type: Sequelize.STRING
+  },
   restaurant: {
+    type: Sequelize.STRING
+  },
+  restaurantrev: {
     type: Sequelize.STRING
   },
   picture: {
