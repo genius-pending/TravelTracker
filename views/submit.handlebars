@@ -41,7 +41,7 @@
         <div class="col-lg-6 col-md-12">
             <div class="mb-3">
                 <label for="user-name" class="form-label">Your name</label>
-                <input class="form-control" name="user-name" id="user-name" placeholder="Input name">
+                <input class="form-control" name="user-name" id="user-name" placeholder="Insert name">
                 <p id="name-error" class="form-error">Invalid name</p>
             </div>
         </div>
@@ -49,7 +49,7 @@
         <div class="col-lg-6 col-md-12">
             <div class="mb-3">
                 <label for="city-name" class="form-label">City you have visited</label>
-                <input class="form-control" name="city-name" id="city-name" placeholder="Input city here">
+                <input class="form-control" name="city-name" id="city-name" placeholder="Insert city here">
                 <p id="city-error" class="form-error">Invalid city</p>
             </div>
         </div>
@@ -57,9 +57,9 @@
     {{!-- Review field --}}
     <div class="mb-3">
         <label for="city-review" class="form-label">Share your experience</label>
-        <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
+        <textarea maxlength="500" placeholder="Insert your review" class="form-control" id="city-review" name="city-review"
             rows="3"></textarea>
-        <p id="review-error" class="form-error">Review must be at least 100 characters</p>
+        <p id="review-error" class="form-error">Review must be between 100 and 500 characters</p>
     </div>
     {{!-- Add picture --}}
     <div class="mb-3 picture-upload">

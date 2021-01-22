@@ -17,7 +17,7 @@ const Holiday = db.define('holiday', {
     allowNull: false
   },
   review: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(500),
     allowNull: false
   },
   hotel: {
