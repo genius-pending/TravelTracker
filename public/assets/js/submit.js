@@ -26,7 +26,7 @@ const validateInput = (userName, cityName, cityReview) => {
 
 const checkForEmptyText = (text) => {
   return (text.trim().length < 1) ? ('No informations provided') : (text.trim());
-}
+};
 
 // Remove error messages from submit form
 const removeErrors = () => {
