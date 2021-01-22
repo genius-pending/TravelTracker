@@ -30,7 +30,8 @@
     <div class="p-2 px-5 text-white rounded bg-dark top-bg-home">
         <div class="col-md-12 px-0">
             <h1 class="display-4 font-italic">Travel Tracker</h1>
-            <p class="lead my-3">More than numbers. More than a rating. Share an experience, what makes a trip and the places to visit</p>
+            <p class="lead my-3">More than numbers. More than a rating. Share an experience, what makes a trip and the
+                places to visit</p>
         </div>
     </div>
 
@@ -46,8 +47,16 @@
                 <div class="card">
                     <img class="card-img-top" src="{{ picture }}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{ cityname }}</h5>
-                        <p class="card-text">{{ review }}</p>
+                        <h5 class="card-title">City: {{ cityname }}</h5>
+                        <p class="card-text">Review: {{ review }}</p>
+                        <p class="card-text">Hotel: </p>
+                        <p class="card-text">{{ hotel }}</p>
+                        <p class="card-text">Hotel review: </p>
+                        <p class="card-text">{{ hotelrev }}</p>
+                        <p class="card-text">Restaurant: </p>
+                        <p class="card-text">{{ hotel }}</p>
+                        <p class="card-text">Restaurant review: </p>
+                        <p class="card-text">{{ restaurantrev }}</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Added {{ dateFormat createdAt }}</small>
@@ -64,8 +73,10 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative text-white">
                 <div class="col p-4 d-flex flex-column position-static bg-dark">
                     <h3 class="mb-1 mt-1">Become a part of the community</h3>
-                    <p class="card-text my-auto mb-2">Share an experience, let the communtiy know what you thought of a trip, your throughts on a hotel, your favourite restaurant. </p>
-                    <a type="button" class="btn btn-light stretched-link my-auto" href="/submit">Submit a review here</a>
+                    <p class="card-text my-auto mb-2">Share an experience, let the communtiy know what you thought of a
+                        trip, your throughts on a hotel, your favourite restaurant. </p>
+                    <a type="button" class="btn btn-light stretched-link my-auto" href="/submit">Submit a review
+                        here</a>
                 </div>
             </div>
         </div>
@@ -78,4 +89,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
     </script>
-    <script src="/assets/js/index.js" defer></script>
+<script src="/assets/js/index.js" defer></script>
