@@ -18,11 +18,16 @@
   background-position: bottom;
 }
 
+.top-bg-browse {
+  background-image: url('./pexels-vincent-gerbouin-1174732.png');
+  background-position: bottom;
+}
+
 .bg-img-submit {
   background-image: url('./grandmother-1822564_1920.png');
 }
 
-.bd-placeholder-img{
+.bg-placeholder-img{
   background-image: url('./beer-garden-3771924_640.png');
   width: 400;
   height: 250;
@@ -30,4 +35,9 @@
 
 .card {
   margin-bottom: 20px;
+  min-height: 590px;
+}
+
+.card-img-mxh {
+  max-height: 333.281px;
 }

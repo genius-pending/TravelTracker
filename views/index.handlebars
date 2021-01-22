@@ -27,7 +27,7 @@
 </nav>
 
 <main class="container mt-3">
-    <div class="p-2 px-5 mb-3 text-white rounded bg-dark top-bg-home">
+    <div class="p-2 px-5 text-white rounded bg-dark top-bg-home">
         <div class="col-md-12 px-0">
             <h1 class="display-4 font-italic">Travel Tracker</h1>
             <p class="lead my-3">More than numbers. More than a rating. Share an experience, what makes a trip and the places to visit</p>
@@ -35,7 +35,10 @@
     </div>
 
     {{!-- cards --}}
-    <div class="container">
+    <div class="container bg-dark pt-3">
+        <div class="row ml-3">
+            <h4 class="display-4 font-italic text-white">Recent featured reviews</h2>
+        </div>
         <div class="row">
 
             {{#each random}}
@@ -56,17 +59,14 @@
 
         </div>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-2 ">
         <div class="col-md-12">
-            <div class="row g-0 rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative text-white">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative text-white">
                 <div class="col p-4 d-flex flex-column position-static bg-dark">
                     <h3 class="mb-1 mt-1">Become a part of the community</h3>
-                    <p class="card-text my-auto">Share an experience, let the communtiy know what you thought of a trip, your throughts on a hotel, your favourite restaurant. </p>
+                    <p class="card-text my-auto mb-2">Share an experience, let the communtiy know what you thought of a trip, your throughts on a hotel, your favourite restaurant. </p>
                     <a type="button" class="btn btn-light stretched-link my-auto" href="/submit">Submit a review here</a>
                 </div>
-                {{!-- <div class="col-auto d-none d-lg-block">
-                    <img src="../public/assets/css/beer-garden-3771924_640.png" alt="" width="400" height="250">
-                </div> --}}
             </div>
         </div>
     </div>
