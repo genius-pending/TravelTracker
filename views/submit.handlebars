@@ -58,17 +58,9 @@
         {{!-- Review field --}}
         <div class="mb-3">
             <label for="city-review" class="form-label text-white">Share your experience</label>
-            <textarea maxlength="500" placeholder="Input your review" class="form-control" id="city-review" name="city-review"
-                rows="3"></textarea>
+            <textarea maxlength="500" placeholder="Input your review" class="form-control" id="city-review"
+                name="city-review" rows="3"></textarea>
             <p id="review-error" class="form-error">Review must be between 100 and 500 characters</p>
-        </div>
-        {{!-- Add picture --}}
-        <div class="mb-3 picture-upload">
-            <button type="button" id="upload_widget" class="btn btn-light">Upload picture</button>
-        </div>
-
-        <div>
-            <h4 class="text-white">Add more information</h2>
         </div>
         {{!-- Fields for more info - hidden --}}
         <div class="d-none" id="hotel-review-input">
@@ -92,13 +84,15 @@
             </div>
         </div>
         {{!-- Buttons to show more info --}}
-        <div class="mb-3">
-            <button type="button" id="hotel-review" class="btn btn-light btn-sm">Hotel Review</button>
-            <button type="button" id="restaurant-review" class="btn btn-light btn-sm">Restaurant Review</button>
+        <div>
+            <h4 class="text-white">Add more information</h2>
         </div>
+        <button type="button" id="hotel-review" class="btn btn-light btn-sm">Hotel Review</button>
+        <button type="button" id="restaurant-review" class="btn btn-light btn-sm">Restaurant Review</button>
+        <button type="button" id="upload_widget" class="btn btn-light btn-sm">Upload a picture</button>
 
         {{!-- Submit Btn --}}
-        <div>
+        <div class="mt-3">
             <button type="button" id="submit-btn" class="btn btn-light btn-lg">Submit your review</button>
         </div>
     </div>
