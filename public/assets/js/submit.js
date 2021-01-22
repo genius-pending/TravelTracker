@@ -60,7 +60,6 @@ $(document).ready(function () {
       restaurant,
       restaurantrev
     };
-    console.log(formData);
     if (input) {
       $.ajax({
         method: 'POST',
