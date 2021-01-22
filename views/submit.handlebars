@@ -58,9 +58,9 @@
         {{!-- Review field --}}
         <div class="mb-3">
             <label for="city-review" class="form-label text-white">Share your experience</label>
-            <textarea placeholder="Input your review" class="form-control" id="city-review" name="city-review"
+            <textarea maxlength="500" placeholder="Input your review" class="form-control" id="city-review" name="city-review"
                 rows="3"></textarea>
-            <p id="review-error" class="form-error">Review must be at least 100 characters</p>
+            <p id="review-error" class="form-error">Review must be between 100 and 500 characters</p>
         </div>
         {{!-- Add picture --}}
         <div class="mb-3 picture-upload">

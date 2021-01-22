@@ -16,7 +16,7 @@ const validateInput = (userName, cityName, cityReview) => {
     $('#city-name').addClass('is-invalid');
     return false;
   }
-  if (cityReview.trim().length < 100) {
+  if (cityReview.trim().length < 100 || cityReview.trim().length > 500) {
     reviewError.css({ opacity: 1 });
     $('#city-review').addClass('is-invalid');
     return false;
