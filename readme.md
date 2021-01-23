@@ -1,4 +1,4 @@
-# Project 2
+# Travel Tracker
 
 
 ## Group 1:
