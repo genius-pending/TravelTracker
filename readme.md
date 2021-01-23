@@ -1,96 +1,79 @@
 # Travel Tracker
 
+# Table of Contents
+1. Description
+2. Installation
+3. Contributors
+4. License
+5. Test
+6. Technology
+7. Questions
 
-## Group 1:
-George Robertshaw. robertsicher
+
+## Description
+
+....
+
+## Description
+TravelTracker is a fullstack CRUD application which can be accessed on https://github.com/genius-pending/TravelTracker.git
+
+The application allows the user to write a review on a recent holiday destination they have visited, this information can then be viewed by other users who can plan there
+holiday based on the reviews of other users.
+....
+
+## Installation
+Clone the Git repository onto your local machine
+Navigate to the folder where the repository exists
+Run the command $ npm init and $ npm i
+From the server folder
+Then run the command $ node server
+Open your browser and search for localhost:3000
+....
+
+## Contributors: 
+TravelTracker was developed by a team of four:
 Shivey Singh. genius-pending
+George Robertshaw. robertsicher
 Pawel Nawoj. PavN93 
 Rekha Kumari. Nikstar-1
-
-
-## Project Title: 
-Travel Tracker
-
-## Website Title and Description
+as part of a group project to demonstrate a fully functioning CRUD application using MVC principles and utilising linting and continuous intergration.
 
 ....
 
-
-The website can be found at the following address ...
-
-## Who is our audience? 
-
-Travellers
-
-## User Story: 
-....
-
-## What is the problem the product is going to address? 
-....
+## License
+## [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-## How does the product solve the problem?
 
-Quickly, and effectively by giving the user direct access to a handy tool allowing them to check destinations. 
-
-## Acceptance Criteria:
-
+## Test:
+All the testing was carried out using travis Elint which is integrated into the package making sure no errors are in the code 
 
 ...
 
-
-
-## Motivation
-
-....
-
-
-## What were the technologies used?
-
-....
-
-
-## Installation
-To run the application locally, first clone this repository with the following command.
-
-git clone https://github.com/genius-pending/TravelTracker.git
-
-Next, install the application dependencies.
-
-npm install
-Finally, run the node server locally.
-
-node server
-Now, open the local application on port 3000 at the URL: http://localhost:3000/.
-
-Enjoy Tracking your Trip!
-
-
-## Tasks 
-
-George Robertshaw. robertsicher ....
-
-Shivey Singh. genius-pending ... 
-
-Pawel Nawoj. PavN93 ... 
-
-Rekha Kumari. Nikstar-1 ...
-
-
-## Screenshots
-
-!["Start Page"](...  "Start page.")
-
-!["Start Page"](..."Start page.")
-
-!["Start Page"](..."Start page.")
-
-
-## Technologies Used
-MySQL
+## Technologies used:
+Javascript
 Node.js
 Express
-Handlebars
+Express-handlebars
+MySQL
+Sequelize
+Heroku
+Cloudinary
+JAWSDB
+
+....
+
+## Questions:
+
+No question but please have fun using the app and if you feel you improve the application make any changes you feel necessary
+
+....
+
+## genius-pending | shivey_khangura@hotmail.com
+## ![img](https://avatars2.githubusercontent.com/u/67982777?v=4)
+
+
+
 
 
 
