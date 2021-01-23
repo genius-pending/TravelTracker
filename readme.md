@@ -55,6 +55,10 @@ No questions but please have fun using the application,if you feel you can impro
 
 ![screenshot](https://user-images.githubusercontent.com/67982777/105606118-52746b80-5d8f-11eb-9352-f0bfb1f5b32b.png)
 
+<img width="1187" alt="Dtop-view" src="https://user-images.githubusercontent.com/67982777/105610768-3a114a80-5da9-11eb-8a97-07b3b1994a8c.png">
+
+<img width="870" alt="MobileView" src="https://user-images.githubusercontent.com/67982777/105610781-51e8ce80-5da9-11eb-8d82-62466829b9f5.png">
+
 
 ## genius-pending | shivey_khangura@hotmail.com
 ## ![img](https://avatars2.githubusercontent.com/u/67982777?v=4)
