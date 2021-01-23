@@ -33,11 +33,15 @@
   height: 250;
 }
 
-.card {
+.card-height {
   margin-bottom: 20px;
   min-height: 590px;
 }
 
 .card-img-mxh {
   max-height: 333.281px;
+}
+
+.card-text-minh{
+  min-height: 120px;
 }

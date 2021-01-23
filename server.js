@@ -7,17 +7,11 @@ require('dotenv').config();
 // Database
 const db = require('./config/db');
 
-
 // Express app and middleware
 const app = express();
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-
-// Requiring routes
-
 
 //uese method override for forum PUT and DELETE queries
 app.use(methodOverride('_method'));
@@ -34,7 +28,6 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 //serve static content from the public directory
 app.use(express.static(__dirname + '/public'));
 
-// app.use('/api', require('./routes/cloudinary-routes'));
 require('./routes/html-routes')(app);
 // Setting up PORT if .env exists or default to 3030
 const PORT = process.env.PORT || 3030;

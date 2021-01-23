@@ -19,7 +19,6 @@ module.exports = function (app) {
     render.reviewHTML(res);
   });
 
-  // Post request - need to confirm with Andy
   app.post('/submit', async (req, res) => {
     const saved = await submit.submitReview(req.body);
     if (saved === false) {
