@@ -88,7 +88,7 @@ let myWidget = cloudinary.createUploadWidget(
     if (!error && result && result.event === 'success') {
       picture = result.info.url;
       $('.picture-upload').append(`
-      <div class="card uploaded-card" style="width: 10rem;">
+      <div class="card uploaded-card" style="width: 10rem; margin-top: 15px;">
         <img src="${picture}" class="card-img-top" alt="Uploaded-picture-icon">
         <div class="card-body">
           <p class="card-text">Uploaded picture</p>
