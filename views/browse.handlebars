@@ -18,9 +18,6 @@
                     <a class="nav-link text-primary" href="/browse" tabindex="-1">Browse Reviews</a>
                 </li>
             </ul>
-            <form>
-                <input class="form-control" type="text" placeholder="Find a review">
-            </form>
         </div>
     </div>
 </nav>
@@ -38,18 +35,16 @@
         {{#each results}}
         <div class="col-lg-6">
             <div class="card card-height">
-                <h5 class="card-title">City: {{ cityname }}</h5>
+                <h5 class="card-title px-2">City: {{ cityname }}</h5>
                 <img class="card-img-top card-img-mxh" src="{{ picture }}" alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text">Review</p>
-                    <p class="card-text">{{ review }}</p>
-                    <p class="card-text">Hotel: </p>
-                    <p class="card-text">{{ hotel }}</p>
-                    <p class="card-text">Hotel review: </p>
+                    <h5 class="card-title">Review</h5>
+                    <p class="card-text card-text-minh">{{ review }}</p>
+                    <h5 class="card-title">Hotel: </h5>
+                    <h6 class="card-subtitle mb-2">{{ hotel }}</h6>
                     <p class="card-text">{{ hotelrev }}</p>
-                    <p class="card-text">Restaurant: </p>
-                    <p class="card-text">{{ hotel }}</p>
-                    <p class="card-text">Restaurant review: </p>
+                    <h5 class="card-title">Restaurant: </h5>
+                    <h6 class="card-subtitle mb-2">{{ restaurant }}</h6>
                     <p class="card-text">{{ restaurantrev }}</p>
                 </div>
                 <div class="card-footer">

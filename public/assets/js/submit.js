@@ -2,7 +2,7 @@ const submitButton = $('#submit-btn');
 const nameError = $('#name-error');
 const cityError = $('#city-error');
 const reviewError = $('#review-error');
-let picture = 'https://via.placeholder.com/600';
+let picture = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';
 
 // Check for input presence
 const validateInput = (userName, cityName, cityReview) => {

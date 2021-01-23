@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const Holiday = require('../models/Holiday');
+const Holiday = require('../models/holiday');
 const helpers = require('../views/helpers/helpers');
 
 
