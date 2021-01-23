@@ -51,7 +51,7 @@ JAWSDB
 
 ## Questions:
 
-No question but please have fun using the app and if you feel you improve the application make any changes you feel necessary
+No question but please have fun using the app and if you feel you can improve the application make any changes you feel necessary
 
 ![screenshot](https://user-images.githubusercontent.com/67982777/105606118-52746b80-5d8f-11eb-9352-f0bfb1f5b32b.png)
 
