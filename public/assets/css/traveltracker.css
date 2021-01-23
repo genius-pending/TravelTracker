@@ -41,3 +41,7 @@
 .card-img-mxh {
   max-height: 333.281px;
 }
+
+.card-text-minh{
+  min-height: 120px;
+}
